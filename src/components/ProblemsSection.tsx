@@ -7,11 +7,11 @@ const problems = [
   },
   {
     icon: TrendingDown,
-    text: "Конверсия сайта/лендинга 1-3% — деньги уходят впустую",
+    text: "Конверсия сайта/лендинга 3-5% — деньги уходят впустую",
   },
   {
     icon: AlertCircle,
-    text: "Агентство берет 70-80 тысяч, а результата нет",
+    text: "Агентство берет от 50 тысяч, а результата нет",
   },
   {
     icon: Clock,
@@ -39,17 +39,30 @@ const ProblemsSection = () => {
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
           {problems.map((problem, index) => {
             const Icon = problem.icon;
+            const isCenter = index === 4;
             return (
               <div
                 key={index}
-                className="group p-6 bg-card/50 backdrop-blur-sm border border-border rounded-lg hover:border-primary/50 hover:shadow-glow transition-all duration-300 animate-fade-in-up"
+                className={`group p-6 bg-card/50 backdrop-blur-sm border border-border rounded-lg hover:border-primary/50 hover:shadow-glow transition-all duration-300 animate-fade-in-up ${isCenter ? 'md:col-span-2 md:max-w-2xl md:mx-auto' : ''}`}
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
                     <Icon className="w-6 h-6 text-primary" />
                   </div>
-                  <p className="text-lg flex-1">{problem.text}</p>
+                  <p className="text-lg flex-1">
+                    {index === 2 ? (
+                      <>
+                        Агентство берет{" "}
+                        <span className="bg-gradient-to-r from-red-600 to-red-400 bg-clip-text text-transparent font-bold">
+                          от 50 тысяч
+                        </span>
+                        , а результата нет
+                      </>
+                    ) : (
+                      problem.text
+                    )}
+                  </p>
                 </div>
               </div>
             );

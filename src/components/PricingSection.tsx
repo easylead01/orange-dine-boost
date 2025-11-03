@@ -4,47 +4,51 @@ import { Check, Star } from "lucide-react";
 const plans = [
   {
     name: "СТАРТ",
-    price: "35 000₽",
+    price: "15 000₽",
     period: "/мес",
     features: [
       "Ведение 1 канала (Директ или VK)",
       "До 3 кампаний",
-      "Базовая аналитика",
-      "Еженедельные отчеты",
+      "Глубокая аналитика",
+      "Креативы и тексты",
+      "Ежемесячные отчеты",
     ],
     suitable: "Небольших франшиз",
-    budget: "бюджет до 50к/мес",
+    budget: "бюджет до 100к/мес",
+    badge: "1 город до 2х точек",
     isPopular: false,
   },
   {
     name: "РОСТ",
-    price: "45 000₽",
+    price: "25 000₽",
     period: "/мес",
     features: [
-      "Ведение 2 каналов (Директ + VK/Таргет)",
+      "Ведение 2 каналов (Директ + VK/Таргет + Рассылки)",
       "До 6 кампаний",
       "Глубокая аналитика",
       "Креативы и тексты",
-      "Еженедельные созвоны",
+      "Ежемесячные отчеты",
     ],
     suitable: "Средних франшиз",
-    budget: "бюджет 50-150к/мес",
+    budget: "бюджет 100-300к/мес",
+    badge: "1 город до 3х точек",
     isPopular: true,
   },
   {
     name: "МАКСИМУМ",
-    price: "60 000₽",
+    price: "40 000₽",
     period: "/мес",
     features: [
       "Ведение всех каналов",
       "Неограниченное количество кампаний",
-      "Посадочные страницы",
-      "A/B тесты",
+      "Глубокая Аналитика",
+      "Креативы и тексты",
       "SMM (базовый) или подключение SMM-специалиста",
-      "Ежедневная связь",
+      "Ежемесячные отчеты",
     ],
-    suitable: "Крупных франшиз",
-    budget: "бюджет 150к+/мес",
+    suitable: "Средних и Крупных франшиз",
+    budget: "бюджет 250к+/мес",
+    badge: "2 города до 5 точек",
     isPopular: false,
   },
 ];
@@ -55,7 +59,7 @@ const PricingSection = () => {
   };
 
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section id="pricing" className="py-20 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand-orange/10 rounded-full blur-[120px]" />
@@ -69,17 +73,18 @@ const PricingSection = () => {
           </h2>
         </div>
 
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {plans.map((plan, index) => (
-            <div
-              key={index}
-              className={`relative p-8 bg-card/50 backdrop-blur-sm rounded-lg transition-all duration-300 animate-fade-in-up ${
-                plan.isPopular
-                  ? "border-2 border-primary shadow-glow-strong scale-105"
-                  : "border border-border hover:border-primary/50 hover:shadow-glow"
-              }`}
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
+        <div className="max-w-6xl mx-auto mb-12">
+          <div className="flex lg:grid lg:grid-cols-3 gap-6 overflow-x-auto lg:overflow-x-visible snap-x snap-mandatory lg:snap-none pt-6 pb-8 lg:pb-0 px-4 lg:px-0 items-stretch scrollbar-hide">
+            {plans.map((plan, index) => (
+              <div
+                key={index}
+                className={`relative p-6 bg-card/50 backdrop-blur-sm rounded-lg transition-all duration-300 animate-fade-in-up flex flex-col min-w-[280px] max-w-[340px] lg:min-w-0 lg:max-w-none snap-center flex-shrink-0 ${
+                  plan.isPopular
+                    ? "border-2 border-primary shadow-glow-strong lg:scale-105"
+                    : "border border-border hover:border-primary/50 hover:shadow-glow"
+                }`}
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
               {/* Popular badge */}
               {plan.isPopular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-primary rounded-full flex items-center gap-1 shadow-glow">
@@ -88,17 +93,17 @@ const PricingSection = () => {
                 </div>
               )}
 
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold mb-4">{plan.name}</h3>
+              <div className="text-center mb-4">
+                <h3 className="text-xl font-bold mb-3">{plan.name}</h3>
                 <div className="flex items-baseline justify-center gap-1 mb-2">
-                  <span className="text-4xl md:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+                  <span className="text-3xl md:text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent">
                     {plan.price}
                   </span>
                   <span className="text-muted-foreground">{plan.period}</span>
                 </div>
               </div>
 
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-2 mb-6 flex-grow">
                 {plan.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
@@ -107,21 +112,30 @@ const PricingSection = () => {
                 ))}
               </ul>
 
-              <div className="pt-6 border-t border-border">
+              <div className="pt-4 border-t border-border">
                 <p className="text-sm text-muted-foreground mb-1">Подходит для:</p>
                 <p className="font-semibold mb-1">{plan.suitable}</p>
-                <p className="text-sm text-muted-foreground">({plan.budget})</p>
+                {plan.badge && (
+                  <p className="text-sm text-primary font-semibold mt-2">{plan.badge}</p>
+                )}
               </div>
 
               <Button
                 variant={plan.isPopular ? "gradient" : "gradient-outline"}
-                className="w-full mt-6"
+                className="w-full mt-4"
                 onClick={scrollToContact}
               >
                 Выбрать тариф
               </Button>
-            </div>
-          ))}
+              </div>
+            ))}
+          </div>
+          
+          {/* Swipe indicator for mobile and tablets */}
+          <div className="lg:hidden flex items-center justify-center gap-2 mt-4 text-muted-foreground text-sm animate-bounce">
+            <span>Свайпните</span>
+            <span className="text-2xl animate-swipe">👉</span>
+          </div>
         </div>
 
         {/* Bottom note */}

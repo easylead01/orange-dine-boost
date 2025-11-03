@@ -13,7 +13,7 @@ const Footer = () => {
                 Александр Сыроватский
               </h3>
               <p className="text-sm text-muted-foreground">
-                Специалист по рекламе доставок еды
+                Специалист по рекламе Food Delivery
               </p>
             </div>
 
@@ -55,7 +55,7 @@ const Footer = () => {
                 <li>ИНН: 360307406695</li>
                 <li>Самозанятый</li>
                 <li>
-                  <a href="#" className="hover:text-primary transition-colors">
+                  <a href="/policy" className="hover:text-primary transition-colors">
                     Политика конфиденциальности
                   </a>
                 </li>

@@ -1,11 +1,12 @@
 import { TrendingUp, TrendingDown, Award } from "lucide-react";
+import logoMobile from "@/assets/logo-mobile.svg";
 
 const CaseStudySection = () => {
   const beforeData = {
-    period: "Май-июнь 2025",
+    period: "Апрель-июнь 2025",
     conversion: "11-12%",
-    cpa: "204-275₽",
-    bounceRate: "~50%",
+    cpa: "249-330₽",
+    bounceRate: "~44%",
   };
 
   const duringData = {
@@ -13,20 +14,13 @@ const CaseStudySection = () => {
     conversion: "24,44%",
     conversionChange: "+110%",
     cpa: "147-170₽",
-    cpaChange: "-47%",
-    bounceRate: "44%",
+    cpaChange: "от 30%",
+    bounceRate: "18%",
   };
 
-  const afterData = {
-    period: "Октябрь 2025 (новый специалист)",
-    conversion: "20,40%",
-    conversionChange: "падение",
-    cpa: "199₽",
-    cpaChange: "рост",
-  };
 
   return (
-    <section id="case-study" className="py-20 relative overflow-hidden">
+    <section id="case-study" className="pt-8 pb-20 md:pt-[50px] relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-brand-orange/10 rounded-full blur-[120px]" />
@@ -36,34 +30,37 @@ const CaseStudySection = () => {
         <div className="text-center mb-12 animate-fade-in">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full mb-4">
             <Award className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium">Главный кейс</span>
+            <span className="text-sm font-medium">ТОП Кейс</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Кейс: Франшизы доставки{" "}
-            <span className="bg-gradient-primary bg-clip-text text-transparent">Фарфор</span>
+            <span className="block md:inline">Кейс: Франшизы доставки</span>{" "}
+            <span className="inline-flex items-center justify-center gap-2 md:gap-3 mt-2 md:mt-0">
+              <img src={logoMobile} alt="FARFOR" className="w-8 h-8 md:w-10 md:h-10 inline-block translate-y-[3px]" />
+              <span className="text-[#FF5044] font-bold">FARFOR</span>
+            </span>
           </h2>
           <p className="text-xl text-muted-foreground">За 3 месяца работы:</p>
         </div>
 
         <div className="max-w-6xl mx-auto">
           {/* Comparison Cards */}
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-2 gap-6 mb-12">
             {/* Before */}
-            <div className="p-6 bg-card/30 backdrop-blur-sm border border-border rounded-lg animate-fade-in-up">
+            <div className="p-6 bg-gradient-to-br from-red-600/20 to-red-400/5 backdrop-blur-sm border-2 border-red-500 rounded-lg shadow-glow animate-fade-in-up relative overflow-hidden">
               <div className="text-sm text-muted-foreground mb-4">{beforeData.period}</div>
-              <h3 className="text-2xl font-bold mb-6">ДО</h3>
+              <h3 className="text-2xl font-bold mb-6 text-red-500">ДО</h3>
               <div className="space-y-4">
                 <div>
                   <div className="text-sm text-muted-foreground">Конверсия</div>
-                  <div className="text-2xl font-bold">{beforeData.conversion}</div>
+                  <div className="text-2xl font-bold text-red-500">{beforeData.conversion}</div>
                 </div>
                 <div>
                   <div className="text-sm text-muted-foreground">CPA (стоимость заказа)</div>
-                  <div className="text-2xl font-bold">{beforeData.cpa}</div>
+                  <div className="text-2xl font-bold text-red-500">{beforeData.cpa}</div>
                 </div>
                 <div>
                   <div className="text-sm text-muted-foreground">Отказы</div>
-                  <div className="text-2xl font-bold">{beforeData.bounceRate}</div>
+                  <div className="text-2xl font-bold text-red-500">{beforeData.bounceRate}</div>
                 </div>
               </div>
             </div>
@@ -73,8 +70,8 @@ const CaseStudySection = () => {
               <div className="absolute top-0 right-0 px-3 py-1 bg-primary text-primary-foreground text-xs font-bold rounded-bl-lg">
                 РЕЗУЛЬТАТ
               </div>
-              <div className="text-sm text-muted-foreground mb-4 mt-6">{duringData.period}</div>
-              <h3 className="text-2xl font-bold mb-6 text-primary">РЕЗУЛЬТАТ</h3>
+              <div className="text-sm text-muted-foreground mb-4">{duringData.period}</div>
+              <h3 className="text-2xl font-bold mb-6 text-primary">ПОСЛЕ</h3>
               <div className="space-y-4">
                 <div>
                   <div className="text-sm text-muted-foreground">Конверсия</div>
@@ -102,28 +99,6 @@ const CaseStudySection = () => {
                 </div>
               </div>
             </div>
-
-            {/* After */}
-            <div className="p-6 bg-card/30 backdrop-blur-sm border border-border rounded-lg animate-fade-in-up" style={{ animationDelay: "200ms" }}>
-              <div className="text-sm text-muted-foreground mb-4">{afterData.period}</div>
-              <h3 className="text-2xl font-bold mb-6">ПОСЛЕ УХОДА</h3>
-              <div className="space-y-4">
-                <div>
-                  <div className="text-sm text-muted-foreground">Конверсия</div>
-                  <div className="flex items-baseline gap-2">
-                    <div className="text-2xl font-bold">{afterData.conversion}</div>
-                    <div className="text-sm font-medium text-red-500">({afterData.conversionChange})</div>
-                  </div>
-                </div>
-                <div>
-                  <div className="text-sm text-muted-foreground">CPA</div>
-                  <div className="flex items-baseline gap-2">
-                    <div className="text-2xl font-bold">{afterData.cpa}</div>
-                    <div className="text-sm font-medium text-red-500">({afterData.cpaChange})</div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Chart visualization */}
@@ -131,12 +106,12 @@ const CaseStudySection = () => {
             <h4 className="text-xl font-bold mb-6">Динамика показателей по месяцам</h4>
             <div className="space-y-6">
               {[
-                { month: "Май", value: 11, label: "11%" },
-                { month: "Июнь", value: 12, label: "12%" },
+                { month: "Апрель", value: 13, label: "13%", isDecline: true },
+                { month: "Май", value: 11, label: "11%", isDecline: true },
+                { month: "Июнь", value: 12, label: "12%", isDecline: true },
                 { month: "Июль", value: 18, label: "18%" },
                 { month: "Август", value: 22, label: "22%" },
                 { month: "Сентябрь", value: 24, label: "24.44%" },
-                { month: "Октябрь", value: 20, label: "20.40%", isDecline: true },
               ].map((item, index) => (
                 <div key={index} className="animate-fade-in-up" style={{ animationDelay: `${index * 50}ms` }}>
                   <div className="flex items-center gap-4 mb-2">
@@ -157,9 +132,8 @@ const CaseStudySection = () => {
 
           {/* Bottom text */}
           <div className="text-center mt-12 p-6 bg-card/50 backdrop-blur-sm border border-primary/30 rounded-lg">
-            <p className="text-lg">
-              Работал с <span className="text-primary font-bold">12+ франчайзи Фарфор</span> по всей России.{" "}
-              После моего ухода показатели у всех начали <span className="text-red-500 font-semibold">падать</span>.
+            <p className="text-[22px]">
+              Работал с <span className="text-primary font-bold">35+</span> <span className="text-white">франчайзи</span> <span className="text-primary font-bold">FARFOR, RISOY, Ваши Суши</span> по всей России.
             </p>
           </div>
         </div>

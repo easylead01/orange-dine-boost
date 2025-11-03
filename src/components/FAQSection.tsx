@@ -24,12 +24,12 @@ const faqs = [
   {
     question: "Есть ли договор?",
     answer:
-      "Да, мы заключаем официальный договор. Работаю как самозанятый/ИП (ИНН: 360307406695), все легально и прозрачно.",
+      "Да, мы заключаем официальный договор. Работаю как самозанятый, все легально и прозрачно.",
   },
   {
     question: "Какой минимальный рекламный бюджет?",
     answer:
-      "Рекомендую начинать от 50 000₽ в месяц на рекламу, чтобы получить достаточно данных для оптимизации. Но возможна работа и с меньшими бюджетами — обсудим индивидуально.",
+      "Я подготовлю медиаплан с оптимальным рекламным бюджетом под ваш регион и цели.",
   },
   {
     question: "Как быстро будут первые результаты?",
@@ -40,7 +40,7 @@ const faqs = [
 
 const FAQSection = () => {
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section id="faq" className="py-20 relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">

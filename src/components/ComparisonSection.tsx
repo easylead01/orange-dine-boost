@@ -4,8 +4,8 @@ const ComparisonSection = () => {
   const comparisons = [
     {
       feature: "Стоимость",
-      agency: "70-80 тысяч/мес",
-      me: "30-40 тысяч/мес",
+      agency: "от 50 тысяч/мес",
+      me: "от 15 тысяч/мес",
       highlight: true,
     },
     {
@@ -26,7 +26,7 @@ const ComparisonSection = () => {
     {
       feature: "Опыт",
       agency: "Работают джуны",
-      me: "3+ года в нише доставок",
+      me: "5+ лет в маркетинге",
     },
   ];
 
@@ -69,9 +69,15 @@ const ComparisonSection = () => {
                     style={{ animationDelay: `${index * 50}ms` }}
                   >
                     <td className="py-4 px-6 font-medium">{item.feature}</td>
-                    <td className="py-4 px-6 text-center text-muted-foreground">{item.agency}</td>
-                    <td className={`py-4 px-6 text-center font-semibold ${item.highlight ? 'text-primary' : ''}`}>
-                      {item.me}
+                    <td className="py-4 px-6 text-center">
+                      <span className={`bg-gradient-to-r from-red-600 to-red-400 bg-clip-text text-transparent font-bold ${item.highlight ? '' : 'md:text-white md:font-normal md:bg-none'}`}>
+                        {item.agency}
+                      </span>
+                    </td>
+                    <td className="py-4 px-6 text-center font-semibold">
+                      <span className={`bg-gradient-primary bg-clip-text text-transparent font-bold ${item.highlight ? '' : 'md:text-white md:font-normal md:bg-none'}`}>
+                        {item.me}
+                      </span>
                     </td>
                   </tr>
                 ))}
@@ -93,14 +99,16 @@ const ComparisonSection = () => {
                     <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                     <div>
                       <div className="text-sm text-muted-foreground mb-1">Агентство:</div>
-                      <div className="text-muted-foreground">{item.agency}</div>
+                      <div className={`bg-gradient-to-r from-red-600 to-red-400 bg-clip-text text-transparent font-bold ${item.highlight ? '' : 'md:text-white md:font-normal md:bg-none'}`}>
+                        {item.agency}
+                      </div>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                     <div>
                       <div className="text-sm text-muted-foreground mb-1">Работа со мной:</div>
-                      <div className={`font-semibold ${item.highlight ? 'text-primary' : ''}`}>
+                      <div className={`bg-gradient-primary bg-clip-text text-transparent font-bold ${item.highlight ? '' : 'md:text-white md:font-normal md:bg-none'}`}>
                         {item.me}
                       </div>
                     </div>
@@ -114,7 +122,7 @@ const ComparisonSection = () => {
           <div className="mt-12 p-8 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 backdrop-blur-sm border-2 border-primary rounded-lg text-center shadow-glow animate-glow-pulse">
             <div className="text-lg text-muted-foreground mb-2">Экономия</div>
             <div className="text-5xl md:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              до 50 000₽
+              от 20 000Р
             </div>
             <div className="text-xl text-muted-foreground mt-2">в месяц</div>
           </div>

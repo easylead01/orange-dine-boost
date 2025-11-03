@@ -11,9 +11,9 @@ const GuaranteeSection = () => {
             
             {/* Content */}
             <div className="relative z-10">
-              <div className="flex items-center justify-center gap-3 mb-6">
-                <Shield className="w-12 h-12 text-primary" />
-                <h2 className="text-3xl md:text-4xl font-bold">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-3 mb-6 text-center md:text-left">
+                <Shield className="w-10 h-10 md:w-12 md:h-12 text-primary flex-shrink-0" />
+                <h2 className="text-2xl md:text-4xl font-bold leading-tight">
                   Работаю с{" "}
                   <span className="bg-gradient-primary bg-clip-text text-transparent">
                     гарантией результата
@@ -22,8 +22,8 @@ const GuaranteeSection = () => {
               </div>
 
               <div className="max-w-2xl mx-auto text-center space-y-6">
-                <p className="text-xl md:text-2xl leading-relaxed">
-                  Если за первый месяц не улучшу ваши показатели —{" "}
+                <p className="text-lg md:text-2xl leading-relaxed">
+                  Если за первый месяц не улучшу ваши показатели (ROI или CPA) —{" "}
                   <span className="font-bold text-primary">следующий месяц работаю со скидкой 50%</span>.
                 </p>
 
@@ -32,10 +32,6 @@ const GuaranteeSection = () => {
                   <span>Вы ничем не рискуете</span>
                 </div>
               </div>
-
-              {/* Decorative corners */}
-              <div className="absolute top-0 left-0 w-24 h-24 border-t-2 border-l-2 border-primary rounded-tl-lg opacity-50" />
-              <div className="absolute bottom-0 right-0 w-24 h-24 border-b-2 border-r-2 border-primary rounded-br-lg opacity-50" />
             </div>
           </div>
         </div>

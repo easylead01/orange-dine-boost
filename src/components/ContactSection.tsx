@@ -32,7 +32,7 @@ const ContactSection = () => {
       budget: ""
     });
   };
-  return <section id="contact" className="py-20 relative overflow-hidden">
+  return <section id="contact" className="pt-2 pb-20 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-orange/5 rounded-full blur-[120px]" />
@@ -43,7 +43,7 @@ const ContactSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Начнем <span className="bg-gradient-primary bg-clip-text text-transparent">работу?</span>
           </h2>
-          <p className="text-xl text-muted-foreground">Получите бесплатный аудит вашей рекламы</p>
+          <p className="text-xl text-muted-foreground" style={{ marginTop: '10px' }}>Получите бесплатный аудит вашей рекламы</p>
         </div>
 
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
@@ -112,10 +112,10 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-8 animate-fade-in-up" style={{
+          <div className="animate-fade-in-up mt-[30px]" style={{
           animationDelay: "100ms"
         }}>
-            <div className="p-8 bg-card/50 backdrop-blur-sm border border-border rounded-lg hover:border-primary/50 transition-colors">
+            <div className="p-8 bg-card/50 backdrop-blur-sm border border-border rounded-lg hover:border-primary/50 transition-colors mb-6">
               <h3 className="text-2xl font-bold mb-6">Контакты</h3>
               
               <div className="space-y-6">
@@ -138,15 +138,13 @@ const ContactSection = () => {
                     </div>
                     <span>@easylead01</span>
                   </a>
-
-                  
                 </div>
               </div>
             </div>
 
-            <div className="p-6 bg-gradient-to-br from-primary/20 to-primary/5 backdrop-blur-sm border border-primary/30 rounded-lg px-[30px]">
+            <div className="p-6 bg-gradient-to-br from-primary/20 to-primary/5 backdrop-blur-sm border border-primary/30 rounded-lg px-[30px] mt-10">
               <p className="text-center">
-                <span className="text-muted-foreground">Среднее время ответа:</span>
+                <span className="text-muted-foreground text-sm">Среднее время ответа:</span>
                 <br />
                 <span className="text-2xl font-bold text-primary">до 1 часа</span>
               </p>
