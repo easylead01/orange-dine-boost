@@ -18,7 +18,7 @@ const HeroSection = () => {
         <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-brand-orange-light/20 rounded-full blur-[120px] animate-pulse delay-1000" />
       </div>
 
-      <div className="container mx-auto px-4 py-12 md:py-20 relative z-10">
+      <div className="container mx-auto px-4 py-12 md:py-20 relative z-10 -mt-10 md:-mt-10">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
             {/* Left column - Text content */}
